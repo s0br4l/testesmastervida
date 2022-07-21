@@ -1,0 +1,33 @@
+{% load static %}
+
+
+ <nav class="navbar navbar-expand-lg bg-light">
+     <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home'%}">
+          <img src="{% static 'icon_master.png' %}">
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'medidas' %}">Medidas</a>
+        </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Testes</a>
+        </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+      </ul>
+      </div>
+      </div>
+</nav>

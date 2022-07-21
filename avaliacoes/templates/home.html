@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<br/>
+<h1> Rotina semestral de medidas antropométricas e testes de desempenho
+Selecione na lista quem vai realizar os testes</h1><br/>
+<br/><br/>
+        <img src="{% static 'logomaster.png' %}" >
+
+{% else %}
+
+<h1> Rotina semestral de medidas antropométricas e testes de desempenho<br/>
+Faca o <a href="{% url 'login' %}">login</a> para ter acesso aos testes</h1><br/>
+<br/><br/>
+        <img src="{% static 'logomaster.png' %}" >
+
+
+{% endif %}
+{% endblock %}
