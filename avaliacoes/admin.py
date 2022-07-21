@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Antropometria, Dexa, Testes
 
-# Register your models here.
+admin.site.register(Antropometria)
+admin.site.register(Dexa)
+admin.site.register(Testes)

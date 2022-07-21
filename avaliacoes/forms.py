@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from .models import Antropometria, Dexa, Testes
 
-class MedidasForm(ModelForm):
+class AntropometriaForm(ModelForm):
     class Meta:
         model = Antropometria
         fields = ('peso', 'estatura', 'Ptronco', 'Pcintura', 'Pabdomen', 'Pquadril', 'PantebracoD', 'PbracoD', 'PcoxaD', 'PpernaD')
@@ -21,10 +21,10 @@ class MedidasForm(ModelForm):
         }
 
 
-class TetesForm(ModelForm):
+class TestesForm(ModelForm):
     class Meta:
         model = Testes
-        fields = ('Dinamometro_1', 'Dinamometro_2', 'Sentar_levantar', 'Ir_vir_1', 'Ir_vir_2', 'Marcha')
+        fields = ('Dinamometro_1', 'Dinamometro_2', 'Sentar_levantar', 'Ir_vir_1', 'Ir_vir_2', 'Marcha_1', 'Marcha_2')
 
         widgets = {
             'Dinamometro_1': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em kgf'}),
@@ -32,6 +32,7 @@ class TetesForm(ModelForm):
             'Sentar_levantar': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Número de repetições'}),
             'Ir_vir_1': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em segundos'}),
             'Ir_vir_2': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em segundos'}),
-            'Marcha': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em segundos'})
+            'Marcha_1': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em segundos'}),
+            'Marcha_2': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em segundos'}),
         }
 

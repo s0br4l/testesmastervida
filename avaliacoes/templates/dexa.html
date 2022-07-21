@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<br/>
+<h1> Saidas do DEXA </h1><br/>
+{{ dexauser }}
+
+{% else %}
+<h1> Logue para ter acesso </h1>
+
+<a href="{% url 'login' %}">Login</a>
+
+{% endif %}
+
+{% endblock %}

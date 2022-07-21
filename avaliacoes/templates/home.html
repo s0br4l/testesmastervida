@@ -4,8 +4,8 @@
 {% block content %}
 {% if user.is_authenticated %}
 <br/>
-<h1> Rotina semestral de medidas antropométricas e testes de desempenho
-Selecione na lista quem vai realizar os testes</h1><br/>
+<h1> Rotina semestral de medidas antropométricas e testes de desempenho<br/>
+Selecione na <a href="{% url 'userlist' %}">lista</a> quem vai realizar os testes</h1><br/>
 <br/><br/>
         <img src="{% static 'logomaster.png' %}" >
 
