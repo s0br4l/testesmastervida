@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<h1>Lista de usuarias
+<h1>Lista de usuárias
 </h1>
 <table class="table table-striped table-hover table-bordered">
   {%for user in antropometrialist %}
@@ -12,9 +12,9 @@
       |{{ user.nome }}|
     </td>
     <td align="right">
-      |<a href="{% url 'antropometria' user.n_user %}" class="btn btn-outline-warning btn-sm"> Antropometria</a>|
-      |<a href="{% url 'testes' user.n_user %}" class="btn btn-outline-info btn-sm"> Testes</a>|
-      |<a href="{% url 'dexa' user.n_user %}" class="btn btn-outline-dark btn-sm"> DEXA</a>|
+      |||<a href="{% url 'antropometria' user.n_user %}" class="btn btn-outline-warning btn-sm"> Antropometria</a>||
+      |<a href="{% url 'testes' user.n_user %}" class="btn btn-outline-info btn-sm"> Testes</a>||
+      |<a href="{% url 'dexa' user.n_user %}" class="btn btn-outline-dark btn-sm"> DEXA</a>|||
     </td>
   </tr>
   {% endfor %}
