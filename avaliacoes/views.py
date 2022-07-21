@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Antropometria, Dexa, Testes
-from .forms import AntropometriaForm, TestesForm
+from .forms import AntropometriaForm, TestesForm, DexaForm
 
 def home(request):
 
@@ -40,5 +40,11 @@ def testes(request, n_user):
 
 def dexa(request, n_user):
     dexauser = Dexa.objects.get(n_user=n_user)
+    form = DexaForm(request.POST or None, instance=dexauser)
+    if form.is_valid():
+        form.save()
+        messages.success(request, ("Dados do DEXA salvos"))
+        return redirect('userlist')
 
-    return render(request, 'dexa.html', {'dexauser': dexauser})
+    return render(request, 'dexa.html', {
+        'dexauser': dexauser, 'form': form})
