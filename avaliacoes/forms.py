@@ -1,11 +1,36 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Antropometria, Dexa, Testes
+from .models import Testes_medidas
+
+class CadastroForm(ModelForm):
+    class Meta:
+        model = Testes_medidas
+        fields = ('nome',)
+        labels = {
+            'nome': 'Nome completo ',
+        }
+
+        widgets = {
+            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Como consta no documento'}),
+        }
+
 
 class AntropometriaForm(ModelForm):
     class Meta:
-        model = Antropometria
+        model = Testes_medidas
         fields = ('peso', 'estatura', 'Ptronco', 'Pcintura', 'Pabdomen', 'Pquadril', 'PantebracoD', 'PbracoD', 'PcoxaD', 'PpernaD')
+        labels = {
+            'peso': 'Peso (em kg)',
+            'estatura': 'Estatura (em cm)',
+            'Ptronco': 'Ptronco (em cm)',
+            'Pcintura': 'Pcintura (em cm)',
+            'Pabdomen': 'Pabdomen (em cm)',
+            'Pquadril': 'Pquadril (em cm)',
+            'PantebracoD': 'PantebracoD (em cm)',
+            'PbracoD': 'PbracoD (em cm)',
+            'PcoxaD': 'PcoxaD (em cm)',
+            'PpernaD': 'PpernaD (em cm)',
+        }
 
         widgets = {
             'peso': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Medida em kg'}),
@@ -23,8 +48,18 @@ class AntropometriaForm(ModelForm):
 
 class TestesForm(ModelForm):
     class Meta:
-        model = Testes
+        model = Testes_medidas
         fields = ('Dinamometro_1', 'Dinamometro_2', 'Sentar_levantar', 'Ir_vir_1', 'Ir_vir_2', 'Marcha_1', 'Marcha_2')
+        labels = {
+            'Dinamometro_1': 'Dinamometro - 1 (kgf)',
+            'Dinamometro_2': 'Dinamometro - 2 (kgf)',
+            'Sentar_levantar': 'Sentar e Levantar (Nrepetições)',
+            'Ir_vir_1': 'Ir e vir - 1 (segundos)',
+            'Ir_vir_2': 'Ir e vir - 2 (segundos)',
+            'Marcha_1': 'Marcha usual - 1 (segundos)',
+            'Marcha_2': 'Marcha usual - 2 (segundos)',
+        }
+
 
         widgets = {
             'Dinamometro_1': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Desempenho em kgf'}),
@@ -39,7 +74,7 @@ class TestesForm(ModelForm):
 
 class DexaForm(ModelForm):
     class Meta:
-        model = Dexa
+        model = Testes_medidas
         fields = ('BMC_gr', 'FAT_MASS_gr', 'LEAN_MASS_gr', 'DXG_T', 'BMC_Arm_L', 'BMC_Arm_R', 'BMC_Trunk', 'BMC_Leg_L',
                   'BMC_Leg_R', 'BMC_Head', 'FAT_MASS_Arm_L', 'FAT_MASS_Arm_R', 'FAT_MASS_Trunk', 'FAT_MASS_Leg_L',
                   'FAT_MASS_Leg_R', 'FAT_MASS_Head', 'LEAN_MASS_Arm_L', 'LEAN_MASS_Arm_R', 'LEAN_MASS_Trunk',

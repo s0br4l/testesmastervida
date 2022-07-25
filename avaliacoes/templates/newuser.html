@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<h1>Adicionar usuário a lista
+</h1>
+<br/><br/>
+{% if submitted %}
+    Usuário cadastrado com sucesso!
+
+{% else %}
+
+<form class="mb-3 row" action="" method="POST">
+    {% csrf_token %}
+<div class="col-sm-7">
+    {{ form.as_p }}
+
+    <input type="submit" value="Cadastrar" class="btn btn-outline-primary">
+</div>
+
+</form>
+
+{% endif %}
+{% endif %}
+{% endblock %}

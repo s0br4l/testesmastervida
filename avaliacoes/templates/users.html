@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+
+{% if users %}
+<h1>{{ users.nome }}
+</h1>
+<table class="table table-striped table-hover table-bordered">
+  <tr>
+    <th>
+        Medidas Antropometricas <br/>
+    </th>
+  </tr>
+  <tr>
+    <td align="left">
+        Peso (em kg)<br/>
+    </td>
+    <td align="right">
+        {{ users.peso }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Estatura (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.estatura }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Ptronco (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.Ptronco }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Pcintura (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.Pcintura }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Pabdomen (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.Pabdomen }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Pquadril (em cm)<br/>
+    <td align="right">
+        {{ users.Pquadril }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        PantebracoD (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.PantebracoD }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        PbracoD (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.PbracoD }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        PcoxaD (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.PcoxaD }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        PpernaD (em cm)<br/>
+    </td>
+    <td align="right">
+        {{ users.PpernaD }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <th>
+        Testes de desempenho <br/>
+    </th>
+  </tr>
+  <tr>
+    <td align="left">
+        Dinamometro - 1 (kgf)<br/>
+    </td>
+    <td align="right">
+        {{ users.Dinamometro_1 }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Dinamometro - 1 (kgf)<br/>
+    </td>
+    <td align="right">
+        {{ users.Dinamometro_2 }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Sentar e Levantar (Nrepetições)<br/>
+    </td>
+    <td align="right">
+        {{ users.Sentar_levantar }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Ir e vir - 1 (segundos)<br/>
+    </td>
+    <td align="right">
+        {{ users.Ir_vir_1 }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Ir e vir - 2 (segundos)<br/>
+    </td>
+    <td align="right">
+        {{ users.Ir_vir_1 }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Marcha usual - 1 (segundos)<br/>
+    <td align="right">
+        {{ users.Marcha_1 }}<br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+        Marcha usual - 2 (segundos)<br/>
+    </td>
+    <td align="right">
+        {{ users.Marcha_2 }}<br/>
+    </td>
+  </tr>
+  {% endif %}
+</table>
+
+
+{% endif %}
+{% endblock %}

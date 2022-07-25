@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import Antropometria, Dexa, Testes
+from .models import Testes_medidas
 
-admin.site.register(Antropometria)
-admin.site.register(Dexa)
-admin.site.register(Testes)
+admin.site.register(Testes_medidas)
