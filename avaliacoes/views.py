@@ -30,7 +30,7 @@ def newuser(request):
 
 
 def userlist(request):
-    userlist = Testes_medidas.objects.all()
+    userlist = Testes_medidas.objects.all().order_by('nome')
 
     return render(request, 'userlist.html', {
         'userlist': userlist})
